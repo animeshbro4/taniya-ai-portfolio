@@ -2,78 +2,82 @@ import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import profileImg from "@/assets/taniya-profile.jpg";
 
-const stats = [
-  { value: "10+", label: "Projects Built" },
-  { value: "5+", label: "AI Systems" },
-  { value: "3rd", label: "Prize — SERBOT" },
-];
-
 export default function HeroSection() {
   return (
-    <section className="grid-bg relative flex min-h-screen items-center pt-16">
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-6 lg:grid-cols-2">
-        {/* Left */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="flex flex-col justify-center"
-        >
-          <p className="mb-4 text-sm font-medium uppercase tracking-widest text-muted-foreground">
-            AI Systems Developer & Full Stack Engineer
-          </p>
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground md:text-6xl">
-            Building intelligent
-            <br />
-            <span className="text-primary">systems that solve</span>
-            <br />
-            real-world problems
-          </h1>
-          <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">
-            I design and deploy production-level AI platforms, scalable backends,
-            and end-to-end intelligent systems — from ML pipelines to IoT integrations.
-          </p>
-          <div className="mt-8 flex items-center gap-4">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-foreground px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-primary hover:text-primary"
-            >
-              Contact Me <span>→</span>
-            </Link>
-            <Link
-              to="/projects"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              View Projects
-            </Link>
-          </div>
-        </motion.div>
+    <section className="relative flex min-h-screen flex-col">
+      {/* Main hero area */}
+      <div className="flex flex-1 items-center">
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-0 px-6 lg:grid-cols-12">
+          {/* Left text block */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col justify-center py-20 lg:col-span-7"
+          >
+            <h1 className="text-5xl font-bold uppercase leading-[0.9] tracking-tight text-foreground md:text-7xl lg:text-8xl">
+              BUILDING
+              <br />
+              INTELLIGENT
+              <br />
+              <span className="text-muted-foreground">SYSTEMS</span>
+            </h1>
+            <div className="mt-8 flex items-start gap-6">
+              <span className="asterisk text-4xl text-foreground">✳</span>
+              <p className="max-w-sm text-xs uppercase leading-relaxed tracking-widest text-muted-foreground">
+                AI Systems Developer & Full Stack Engineer — designing production-level
+                platforms, scalable backends, and end-to-end intelligent systems.
+              </p>
+            </div>
+            <div className="mt-10">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-3 border border-foreground px-8 py-4 text-xs font-bold uppercase tracking-widest text-foreground transition-all hover:bg-foreground hover:text-background"
+              >
+                Start a Project
+              </Link>
+            </div>
+          </motion.div>
 
-        {/* Right — stats + image */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="flex flex-col items-center gap-6"
-        >
-          <div className="relative h-72 w-72 overflow-hidden rounded-2xl border border-border lg:h-80 lg:w-80">
-            <img
-              src={profileImg}
-              alt="Taniya Fernandez"
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div className="flex w-full max-w-sm flex-col gap-3">
-            {stats.map((s) => (
-              <div key={s.label} className="stat-card rounded-xl px-6 py-4 text-center">
-                <p className="text-2xl font-bold text-foreground">{s.value}</p>
-                <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                  {s.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+          {/* Right image block */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="relative flex items-end justify-end lg:col-span-5"
+          >
+            <div className="relative h-[400px] w-full overflow-hidden border border-border grayscale lg:h-[500px]">
+              <img
+                src={profileImg}
+                alt="Taniya Fernandez"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Bottom marquee ticker */}
+      <div className="overflow-hidden border-t border-border py-4">
+        <div className="animate-marquee flex whitespace-nowrap">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <span key={i} className="flex items-center gap-6 px-6">
+              <span className="text-sm font-bold uppercase tracking-widest text-foreground">AI SYSTEMS</span>
+              <span className="asterisk text-foreground">✳</span>
+              <span className="text-sm font-bold uppercase tracking-widest text-foreground">FULL STACK</span>
+              <span className="asterisk text-foreground">✳</span>
+              <span className="text-sm font-bold uppercase tracking-widest text-foreground">SAAS PRODUCTS</span>
+              <span className="asterisk text-foreground">✳</span>
+              <span className="text-sm font-bold uppercase tracking-widest text-foreground">AI AUTOMATION</span>
+              <span className="asterisk text-foreground">✳</span>
+              <span className="text-sm font-bold uppercase tracking-widest text-foreground">INTELLIGENT SYSTEMS</span>
+              <span className="asterisk text-foreground">✳</span>
+              <span className="text-sm font-bold uppercase tracking-widest text-foreground">ML PIPELINES</span>
+              <span className="asterisk text-foreground">✳</span>
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

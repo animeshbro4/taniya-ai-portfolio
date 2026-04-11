@@ -51,53 +51,45 @@
   --font-body: var(--font-body);
 }
 
-@font-face {
-  font-family: 'Space Grotesk';
-  font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-  src: url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-}
-
 :root {
-  --radius: 0.75rem;
+  --radius: 0rem;
   --font-heading: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Space Grotesk', system-ui, sans-serif;
-  --background: oklch(0.1 0.02 260);
-  --foreground: oklch(0.95 0.01 260);
-  --card: oklch(0.14 0.02 260);
-  --card-foreground: oklch(0.95 0.01 260);
-  --popover: oklch(0.14 0.02 260);
-  --popover-foreground: oklch(0.95 0.01 260);
-  --primary: oklch(0.65 0.18 250);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.18 0.02 260);
-  --secondary-foreground: oklch(0.85 0.02 260);
-  --muted: oklch(0.2 0.02 260);
-  --muted-foreground: oklch(0.6 0.03 260);
-  --accent: oklch(0.55 0.2 280);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.25 0.02 260);
-  --input: oklch(0.2 0.02 260);
-  --ring: oklch(0.65 0.18 250);
-  --glow: oklch(0.65 0.18 250);
-  --surface: oklch(0.12 0.02 260);
-  --surface-foreground: oklch(0.9 0.01 260);
-  --chart-1: oklch(0.65 0.18 250);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.12 0.02 260);
-  --sidebar-foreground: oklch(0.95 0.01 260);
-  --sidebar-primary: oklch(0.65 0.18 250);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.18 0.02 260);
-  --sidebar-accent-foreground: oklch(0.95 0.01 260);
-  --sidebar-border: oklch(0.25 0.02 260);
-  --sidebar-ring: oklch(0.65 0.18 250);
+  --background: hsl(0 0% 3%);
+  --foreground: hsl(0 0% 96%);
+  --card: hsl(0 0% 6%);
+  --card-foreground: hsl(0 0% 96%);
+  --popover: hsl(0 0% 6%);
+  --popover-foreground: hsl(0 0% 96%);
+  --primary: hsl(0 0% 100%);
+  --primary-foreground: hsl(0 0% 3%);
+  --secondary: hsl(0 0% 10%);
+  --secondary-foreground: hsl(0 0% 80%);
+  --muted: hsl(0 0% 12%);
+  --muted-foreground: hsl(0 0% 55%);
+  --accent: hsl(0 0% 15%);
+  --accent-foreground: hsl(0 0% 96%);
+  --destructive: hsl(0 72% 51%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(0 0% 15%);
+  --input: hsl(0 0% 10%);
+  --ring: hsl(0 0% 100%);
+  --glow: hsl(0 0% 100%);
+  --surface: hsl(0 0% 5%);
+  --surface-foreground: hsl(0 0% 90%);
+  --chart-1: hsl(0 0% 100%);
+  --chart-2: hsl(0 0% 70%);
+  --chart-3: hsl(0 0% 50%);
+  --chart-4: hsl(0 0% 30%);
+  --chart-5: hsl(0 0% 20%);
+  --sidebar: hsl(0 0% 5%);
+  --sidebar-foreground: hsl(0 0% 96%);
+  --sidebar-primary: hsl(0 0% 100%);
+  --sidebar-primary-foreground: hsl(0 0% 3%);
+  --sidebar-accent: hsl(0 0% 10%);
+  --sidebar-accent-foreground: hsl(0 0% 96%);
+  --sidebar-border: hsl(0 0% 15%);
+  --sidebar-ring: hsl(0 0% 100%);
 }
 
 @layer base {
@@ -114,55 +106,70 @@
   }
 }
 
-/* Grid background pattern */
-.grid-bg {
-  background-image:
-    linear-gradient(to right, oklch(0.25 0.02 260 / 40%) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.25 0.02 260 / 40%) 1px, transparent 1px);
-  background-size: 60px 60px;
+/* Marquee ticker */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
 }
 
-/* Glow effect */
+/* Editorial line pattern */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, hsl(0 0% 15% / 30%) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(0 0% 15% / 30%) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Card hover */
 .glow-border {
   border: 1px solid var(--color-border);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .glow-border:hover {
-  border-color: var(--color-glow);
-  box-shadow: 0 0 20px oklch(0.65 0.18 250 / 15%);
+  border-color: var(--color-foreground);
+  box-shadow: 0 0 30px hsl(0 0% 100% / 5%);
 }
 
-/* Stat card style */
+/* Stat card */
 .stat-card {
-  background: oklch(0.12 0.02 260 / 80%);
+  background: hsl(0 0% 6% / 90%);
   border: 1px solid var(--color-border);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 .stat-card:hover {
-  border-color: var(--color-glow);
+  border-color: var(--color-foreground);
   transform: translateY(-2px);
 }
 
-/* Section fade */
+/* Section divider */
 .section-divider {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--color-border), transparent);
 }
 
-/* Smooth scrolling */
+/* Scrolling */
 html {
   scroll-behavior: smooth;
 }
-
-/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
   background: var(--color-background);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-border);
-  border-radius: 3px;
+  border-radius: 2px;
+}
+
+/* Asterisk decoration */
+.asterisk {
+  display: inline-block;
+  font-size: 1.5em;
+  line-height: 1;
+  vertical-align: middle;
 }
