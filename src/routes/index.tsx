@@ -1,19 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
+import HeroSection from "@/components/HeroSection";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Taniya Fernandez — AI Systems Developer & Full Stack Engineer" },
+      { name: "description", content: "Building production-level AI platforms, scalable backends, and intelligent systems." },
+      { property: "og:title", content: "Taniya Fernandez — AI Systems Developer" },
+      { property: "og:description", content: "Building production-level AI platforms, scalable backends, and intelligent systems." },
+    ],
+  }),
+  component: HomePage,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
-  );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
+function HomePage() {
+  return <HeroSection />;
 }
