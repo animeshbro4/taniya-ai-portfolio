@@ -16,6 +16,7 @@ export const Route = createFileRoute("/about")({
 });
 
 const achievements = [
+  { title: "Webnify — Developer and Receptionist", description: "Contributed to website work while also managing receptionist and client-facing responsibilities." },
   { title: "3rd Prize — SERBOT TECH EXPO", description: "Competed against 50+ teams, showcasing an AI-powered IoT system." },
   { title: "Led Multiple AI & IoT Projects", description: "From career counseling platforms to smart farming bots — end-to-end ownership." },
   { title: "Production-Level AI Deployments", description: "TensorRT + Triton inference pipelines deployed for real-time workloads." },
@@ -38,6 +39,10 @@ function AboutPage() {
                 I'm an AI Systems Developer and Full Stack Engineer who builds intelligent systems
                 that solve real-world problems. My work spans ML-powered platforms, scalable backend
                 architectures, and production-level AI deployments.
+              </p>
+              <p>
+                At Webnify, I worked as a Developer and Receptionist, combining website support with
+                front-desk coordination and client communication.
               </p>
               <p>
                 I focus on the intersection of artificial intelligence and practical engineering —
