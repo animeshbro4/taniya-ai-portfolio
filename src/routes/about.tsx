@@ -61,8 +61,9 @@ function AboutPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex justify-center"
           >
-            <div className="relative h-96 w-80 overflow-hidden border border-border grayscale">
+            <div className="relative h-[500px] w-full max-w-md overflow-hidden rounded-lg border border-border">
               <img src={profileImg} alt="Taniya Fernandez" className="h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-primary/10" />
             </div>
           </motion.div>
         </div>
