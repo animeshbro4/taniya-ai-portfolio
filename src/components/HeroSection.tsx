@@ -20,10 +20,10 @@ export default function HeroSection() {
               <br />
               INTELLIGENT
               <br />
-              <span className="text-muted-foreground">SYSTEMS</span>
+              <span className="text-primary">SYSTEMS</span>
             </h1>
             <div className="mt-8 flex items-start gap-6">
-              <span className="asterisk text-4xl text-foreground">✳</span>
+              <span className="asterisk text-4xl text-primary">✳</span>
               <p className="max-w-sm text-xs uppercase leading-relaxed tracking-widest text-muted-foreground">
                 AI Systems Developer & Full Stack Engineer — designing production-level
                 platforms, scalable backends, and end-to-end intelligent systems.
@@ -32,7 +32,7 @@ export default function HeroSection() {
             <div className="mt-10">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 border border-foreground px-8 py-4 text-xs font-bold uppercase tracking-widest text-foreground transition-all hover:bg-foreground hover:text-background"
+                className="inline-flex items-center gap-3 border border-primary/50 bg-primary/10 px-8 py-4 text-xs font-bold uppercase tracking-widest text-primary-foreground transition-all hover:bg-primary hover:text-primary-foreground backdrop-blur-sm rounded-lg"
               >
                 Start a Project
               </Link>
@@ -46,35 +46,35 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 0.3 }}
             className="relative flex items-end justify-end lg:col-span-5"
           >
-            <div className="relative h-[400px] w-full overflow-hidden border border-border grayscale lg:h-[500px]">
+            <div className="relative h-[400px] w-full overflow-hidden rounded-lg border border-border lg:h-[500px]">
               <img
                 src={profileImg}
                 alt="Taniya Fernandez"
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-primary/10" />
             </div>
           </motion.div>
         </div>
       </div>
 
       {/* Bottom marquee ticker */}
-      <div className="overflow-hidden border-t border-border py-4">
+      <div className="overflow-hidden border-t border-border py-4 glass">
         <div className="animate-marquee flex whitespace-nowrap">
           {Array.from({ length: 2 }).map((_, i) => (
             <span key={i} className="flex items-center gap-6 px-6">
               <span className="text-sm font-bold uppercase tracking-widest text-foreground">AI SYSTEMS</span>
-              <span className="asterisk text-foreground">✳</span>
+              <span className="asterisk text-primary">✳</span>
               <span className="text-sm font-bold uppercase tracking-widest text-foreground">FULL STACK</span>
-              <span className="asterisk text-foreground">✳</span>
+              <span className="asterisk text-primary">✳</span>
               <span className="text-sm font-bold uppercase tracking-widest text-foreground">SAAS PRODUCTS</span>
-              <span className="asterisk text-foreground">✳</span>
+              <span className="asterisk text-primary">✳</span>
               <span className="text-sm font-bold uppercase tracking-widest text-foreground">AI AUTOMATION</span>
-              <span className="asterisk text-foreground">✳</span>
+              <span className="asterisk text-primary">✳</span>
               <span className="text-sm font-bold uppercase tracking-widest text-foreground">INTELLIGENT SYSTEMS</span>
-              <span className="asterisk text-foreground">✳</span>
+              <span className="asterisk text-primary">✳</span>
               <span className="text-sm font-bold uppercase tracking-widest text-foreground">ML PIPELINES</span>
-              <span className="asterisk text-foreground">✳</span>
+              <span className="asterisk text-primary">✳</span>
             </span>
           ))}
         </div>
