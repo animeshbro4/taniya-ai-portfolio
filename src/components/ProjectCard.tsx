@@ -31,7 +31,7 @@ export default function ProjectCard({ title, subtitle, category, description, ta
       <ul className="mb-5 space-y-1.5">
         {highlights.map((h) => (
           <li key={h} className="flex items-start gap-2 text-sm text-muted-foreground">
-            <span className="mt-1.5 h-1 w-1 shrink-0 bg-foreground" />
+            <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
             {h}
           </li>
         ))}
