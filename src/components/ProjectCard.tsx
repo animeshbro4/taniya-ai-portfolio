@@ -20,7 +20,7 @@ export default function ProjectCard({ title, subtitle, category, description, ta
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="glow-border group bg-card p-6 md:p-8"
+      className="glow-border group p-6 md:p-8"
     >
       <div className="mb-4 flex items-center gap-3">
         <span className="border border-border px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">{category}</span>
