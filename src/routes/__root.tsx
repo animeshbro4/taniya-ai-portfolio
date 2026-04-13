@@ -56,6 +56,7 @@ function RootComponent() {
       <Navbar />
       <Outlet />
       <Footer />
+      <LikeButton />
     </>
   );
 }

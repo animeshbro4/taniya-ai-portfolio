@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
-import profileImg from "@/assets/taniya-profile.jpg";
+import profileImg from "@/assets/taniya-about.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
