@@ -1,6 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LikeButton from "@/components/LikeButton";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -55,6 +56,7 @@ function RootComponent() {
       <Navbar />
       <Outlet />
       <Footer />
+      <LikeButton />
     </>
   );
 }
